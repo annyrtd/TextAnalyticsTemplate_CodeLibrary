@@ -132,7 +132,7 @@ class Page_comments{
     context.log.LogDebug("htl render5");
         htlComments.AddTAColumn("overallsentiment");
     context.log.LogDebug("htl render6");
-        //htlComments.AddTAColumn("categories");
+        htlComments.AddTAColumn("categories");
         htlComments.AddConfiguredColumns();
     context.log.LogDebug("htl render7");
     }
@@ -187,11 +187,11 @@ class Page_comments{
             title: "Date"
         }];
 
-        /*
-            hitlistHeaders["categories"] = {
+
+            hitlistHeaders["categories"] = [{
                 name: _folder.GetQuestionId("categories")
-            };
-         */
+            }];
+
 
         hitlistHeaders["sentiment"].push( {
             name: _folder.GetQuestionId("overallSentiment"),
