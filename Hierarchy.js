@@ -24,11 +24,19 @@ class Hierarchy{
     };
 
     function Hierarchy(globals, settings) {
+    globals.log.LogDebug("hier");
         _globals = globals;
-        _settings = _mergeOptions(_defaultSettings, settings);
+    _settings = _mergeOptions(_defaultSettings, settings);
         globals.log.LogDebug(_settings.schemaId);
         var dataTable = _getDataTable();
+    globals.log.LogDebug("gdt");
+        if(!dataTable.Columns.Contains(_settings.textColumnName))
+            _settings.textColumnName = "__l9"
+    globals.log.LogDebug("set cur l");
+
+    globals.log.LogDebug("merge options");
         _generateFlatList(dataTable.Rows)
+    globals.log.LogDebug("gfl");
         _setupHierarchy(0, null);
     }
 
@@ -114,6 +122,7 @@ class Hierarchy{
         return _hierarchy;
     }
 
+
     /**
      * @memberof Hierarchy
      * @instance
@@ -188,7 +197,8 @@ class Hierarchy{
                     text: _flat[i].text,
                     name: _flat[i].name,
                     parent: parentObjId,
-                    subcells: []
+                    subcells: [],
+                    level: level
                 };
                 if( _levels.length <= level ) {
                     _levels.push( [] );
