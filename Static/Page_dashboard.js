@@ -27,10 +27,10 @@ class Page_dashboard{
             Id: "TA_ALL_CATEGORIES",
             Value: "emptyv"
         },
-    {
-        Id: "TA_FOLDERS",
-        Value: (Config.TAQuestions[0].TAQuestionName+Config.TAQuestions[0].TAModelNo)
-    }
+        {
+            Id: "TA_FOLDERS",
+            Value: (Config.TAQuestions[0].TAQuestionName+Config.TAQuestions[0].TAModelNo)
+        }
     ];
 
     /**
