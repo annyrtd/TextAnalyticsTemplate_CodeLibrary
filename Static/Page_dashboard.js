@@ -51,39 +51,39 @@ class Page_dashboard{
      * @param {Object} context - {component: page, pageContext: this.pageContext, report: report, user: user, state: state, confirmit: confirmit, log: log}
      */
     static function Render(context){
-    _currentLanguage = context.report.CurrentLanguage;
-    _curDictionary = Translations.dictionary(_currentLanguage);
-    Config.SetTALibrary(TAHelper.GetGlobals(context));
-    if(context.component.SubmitSource == "lstQuestions") {
-        context.state.Parameters["TA_ALL_CATEGORIES"] = null;
-        context.state.Parameters["TA_ATTRIBUTES_SINGLE"] = null;
-        context.state.Parameters["TA_LEVEL"] = null;
-        context.state.Parameters["TA_SUB_CATEGORIES_SINGLE"] = null;
-        context.state.Parameters["TA_TOP_CATEGORIES_SINGLE"] = null;
-        context.state.Parameters["TA_VIEW_BY"] = null;
+        _currentLanguage = context.report.CurrentLanguage;
+        _curDictionary = Translations.dictionary(_currentLanguage);
+        Config.SetTALibrary(TAHelper.GetGlobals(context));
+        if(context.component.SubmitSource == "lstQuestions") {
+            context.state.Parameters["TA_ALL_CATEGORIES"] = null;
+            context.state.Parameters["TA_ATTRIBUTES_SINGLE"] = null;
+            context.state.Parameters["TA_LEVEL"] = null;
+            context.state.Parameters["TA_SUB_CATEGORIES_SINGLE"] = null;
+            context.state.Parameters["TA_TOP_CATEGORIES_SINGLE"] = null;
+            context.state.Parameters["TA_VIEW_BY"] = null;
+        }
+
+
+        TAHelper.SetLastVisitedPage(TAHelper.GetGlobals(context), "dashboard");
+        var paramUtils = new ParameterUtilities(TAHelper.GetGlobals(context));
+
+
+        paramUtils.SetDefaultParameterValues(_defaultParameters);
+        var taParams  = new TAParameters(TAHelper.GetGlobals(context), Config.GetTALibrary());
+        var selectedFolder = TALibrary.GetTAFoldersParameterValue(context);
+        _folder = Config.GetTALibrary().GetFolderById(selectedFolder);
+        _filterComponents = new FilterComponents(TAHelper.GetGlobals(context), Config.GetTALibrary().GetFilterQuestions(), Config.DS_Main);
+
+        _filter_panel = new FilterPanel(_filterComponents,_curDictionary);
+        if(context.component.SubmitSource == "ClearFilters"){
+            _filterComponents.ClearFilters();
+            context.state.Parameters["TA_DATE_FROM"] = null;
+            context.state.Parameters["TA_DATE_TO"] = null;
+        }
+        taParams.ClearSubcategoriesParameters(selectedFolder, "emptyv", "TA_TOP_CATEGORIES_SINGLE", "TA_SUB_CATEGORIES_SINGLE", "TA_ATTRIBUTES_SINGLE");
+        taParams.ClearSubcategoriesParameters(selectedFolder, "emptyv", "TA_SUB_CATEGORIES_SINGLE", "TA_ATTRIBUTES_SINGLE");
+
     }
-
-
-    TAHelper.SetLastVisitedPage(TAHelper.GetGlobals(context), "dashboard");
-    var paramUtils = new ParameterUtilities(TAHelper.GetGlobals(context));
-
-
-    paramUtils.SetDefaultParameterValues(_defaultParameters);
-    var taParams  = new TAParameters(TAHelper.GetGlobals(context), Config.GetTALibrary());
-    var selectedFolder = TALibrary.GetTAFoldersParameterValue(context);
-    _folder = Config.GetTALibrary().GetFolderById(selectedFolder);
-    _filterComponents = new FilterComponents(TAHelper.GetGlobals(context), Config.GetTALibrary().GetFilterQuestions(), Config.DS_Main);
-
-    _filter_panel = new FilterPanel(_filterComponents,_curDictionary);
-    if(context.component.SubmitSource == "ClearFilters"){
-        _filterComponents.ClearFilters();
-        context.state.Parameters["TA_DATE_FROM"] = null;
-        context.state.Parameters["TA_DATE_TO"] = null;
-    }
-    taParams.ClearSubcategoriesParameters(selectedFolder, "emptyv", "TA_TOP_CATEGORIES_SINGLE", "TA_SUB_CATEGORIES_SINGLE", "TA_ATTRIBUTES_SINGLE");
-    taParams.ClearSubcategoriesParameters(selectedFolder, "emptyv", "TA_SUB_CATEGORIES_SINGLE", "TA_ATTRIBUTES_SINGLE");
-
-}
 
     /**
      * @memberof Page_dashboard
