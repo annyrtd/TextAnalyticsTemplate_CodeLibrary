@@ -125,7 +125,7 @@ class TADetailedAnalysisTable{
         //var neutralcolumn = _taTableUtils.GetCategoriesExpression( "neu", false, false, _distribution, Config.SentimentRange );
         //var negativecolumn = _taTableUtils.GetCategoriesExpression( "neg", false, false, _distribution, Config.SentimentRange );
 
-        columnexpr = [columnbase, countformula, columnstatistic, positivecolumn, neutralcolumn, negativecolumn].join("+");
+        columnexpr = [columnbase, countformula/*, columnstatistic, positivecolumn, neutralcolumn, negativecolumn*/].join("+");
         return columnexpr
     }
 
