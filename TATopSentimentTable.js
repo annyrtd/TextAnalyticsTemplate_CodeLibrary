@@ -58,8 +58,9 @@ class TATopSentimentTable{
         var mask = _taMasks.GetCategoriesMask(_level);
         var rowexpr = _taTableUtils.GetTAQuestionExpression(qType, mask);
         //var sentiment = _sentiment ? "pos" : "neg";
-        var sentiment = "all";
-        var columnexpr = _taTableUtils.GetCategoriesExpression( sentiment, false, false, _distribution, Config.SentimentRange );
+        //var sentiment = "all";
+        //var columnexpr = _taTableUtils.GetCategoriesExpression( sentiment, false, false, _distribution, Config.SentimentRange );
+        var columnexpr = _taTableUtils.GetBaseExpression( false );
         _taTableUtils.CreateTableFromExpression(rowexpr, columnexpr);
         _addChartColumn();
         _setupSorting();

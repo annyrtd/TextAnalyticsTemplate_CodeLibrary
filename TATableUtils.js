@@ -274,6 +274,24 @@ class TATableUtils{
     /**
      * @memberof TATableUtils
      * @instance
+     * @function GetBaseExpression
+     * @description function to get columnHeaderExpression for number of responses
+     * @param {Boolean} hideHeader
+     */
+    function GetBaseExpression( hideHeader ){
+        var expression = "";
+        expression = '[BASE]{totals:true';
+        expression += ';mask:emptyv';
+        if ( hideHeader ) {
+            expression += ';hideheader:true';
+            expression += '}';
+        }
+        return expression;
+    }
+
+    /**
+     * @memberof TATableUtils
+     * @instance
      * @function GetChartHeader
      * @description function to get Header containing Barchart
      * @param {ChartComboType} type
