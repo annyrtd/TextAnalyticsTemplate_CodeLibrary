@@ -63,7 +63,7 @@ class TADetailedAnalysisTable{
         _taTableUtils.CreateTableFromExpression(rowexpr, colexpr);
         _setupTableDistribution();
         _table.RowNesting = TableRowNestingType.Nesting;
-        _setupConditionalFormatting();
+        //_setupConditionalFormatting();
         _addChartColumn();
     }
 
@@ -77,7 +77,7 @@ class TADetailedAnalysisTable{
         var rowexpr = "";
 
         var blockHeader = "";
-        var qType = "categorysentiment";
+        var qType = "categories";
         var categoryHeader = "(";
 
         var mask = false;
@@ -120,10 +120,10 @@ class TADetailedAnalysisTable{
 
         var countformula = _getColumnFormulaExpression();
 
-        var columnstatistic = "[STATISTICS]{statistics:avg}";
-        var positivecolumn = _taTableUtils.GetCategoriesExpression( "pos", false, false, _distribution, Config.SentimentRange );
-        var neutralcolumn = _taTableUtils.GetCategoriesExpression( "neu", false, false, _distribution, Config.SentimentRange );
-        var negativecolumn = _taTableUtils.GetCategoriesExpression( "neg", false, false, _distribution, Config.SentimentRange );
+        //var columnstatistic = "[STATISTICS]{statistics:avg}";
+        //var positivecolumn = _taTableUtils.GetCategoriesExpression( "pos", false, false, _distribution, Config.SentimentRange );
+        //var neutralcolumn = _taTableUtils.GetCategoriesExpression( "neu", false, false, _distribution, Config.SentimentRange );
+        //var negativecolumn = _taTableUtils.GetCategoriesExpression( "neg", false, false, _distribution, Config.SentimentRange );
 
         columnexpr = [columnbase, countformula, columnstatistic, positivecolumn, neutralcolumn, negativecolumn].join("+");
         return columnexpr
