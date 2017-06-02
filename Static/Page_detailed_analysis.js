@@ -143,7 +143,7 @@ class Page_detailed_analysis{
      * @returns {Boolean}
      */
     static function tblPositiveCommentsTile_Hide(context){
-        return false;
+        return true;
     }
 
     /**
@@ -162,7 +162,7 @@ class Page_detailed_analysis{
      * @returns {Boolean}
      */
     static function tblNeutralCommentsTile_Hide(context){
-        return false;
+        return true;
     }
 
     /**
@@ -181,7 +181,7 @@ class Page_detailed_analysis{
      * @returns {Boolean}
      */
     static function tblNegativeCommentsTile_Hide(context){
-        return false;
+        return true;
     }
 
     /**
@@ -438,7 +438,7 @@ class Page_detailed_analysis{
 }
 
     static function txtPositive_Hide(context){
-    return false
+    return true
 }
 
     /**
@@ -453,7 +453,7 @@ class Page_detailed_analysis{
 }
 
     static function txtNeutral_Hide(context){
-    return false
+    return true
 }
 
     /**
@@ -468,7 +468,7 @@ class Page_detailed_analysis{
 }
 
     static function txtNegative_Hide(context){
-    return false
+    return true
 }
 
     /**
