@@ -66,7 +66,6 @@ class TATopChangedTable{
         _taTableUtils.CreateTableFromExpression(rowexpr);
 
         _addTimeSeriesColumn();
-
         _addDifferenceColumn();
         _addChartColumn();
         _setupSorting();
@@ -80,11 +79,11 @@ class TATopChangedTable{
      */
     private function _addTimeSeriesColumn(){
     var headerTimeSeries = _taTableUtils.GetTimePeriodHeader(_period.Unit, _period.From, _period.To);
-    var headerStatistics: HeaderStatistics = new HeaderStatistics();
-    headerStatistics.HideHeader = true;
-    headerStatistics.Statistics.Avg = true;
-    headerStatistics.SubHeaders.Add(headerTimeSeries);
-    _table.ColumnHeaders.Add(headerStatistics);
+    //var headerStatistics: HeaderStatistics = new HeaderStatistics();
+    //headerStatistics.HideHeader = true;
+    //headerStatistics.Statistics.Avg = true;
+    //headerStatistics.SubHeaders.Add(headerTimeSeries);
+    _table.ColumnHeaders.Add(headerTimeSeries);
 }
 
 
@@ -99,8 +98,9 @@ class TATopChangedTable{
         headerFormula.Type = FormulaType.Expression;
         headerFormula.HideData = false;
         headerFormula.Decimals = 1;
-        var sign = _sentiment ? ">" : "<";
-        headerFormula.Expression = "IF((cellv(col-1,row)-cellv(col-2,row))"+sign+"0,(cellv(col-1,row)-cellv(col-2,row)),EMPTYV())";
+        //var sign = _sentiment ? ">" : "<";
+        //headerFormula.Expression = "IF((cellv(col-1,row)-cellv(col-2,row))"+sign+"0,(cellv(col-1,row)-cellv(col-2,row)),EMPTYV())";
+        headerFormula.Expression = "cellv(col-1,row)-cellv(col-2,row)";
         headerFormula.Title = new Label(9, " ");
         headerFormula.HideHeader = true;
 
