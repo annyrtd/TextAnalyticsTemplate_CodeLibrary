@@ -344,7 +344,7 @@ class Page_comments{
      * @returns {Boolean}
      */
     static function txtSentiment_Hide(context){
-        return false
+        return true
     }
 
     /**
