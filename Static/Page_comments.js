@@ -138,7 +138,7 @@ class Page_comments{
         }
         htlComments.AddTAColumn("verbatim");
         htlComments.AddColumn(_folder.GetTimeVariableId(), true);
-        //htlComments.AddTAColumn("overallsentiment");
+        htlComments.AddTAColumn("overallsentiment");
         htlComments.AddTAColumn("categories");
         htlComments.AddConfiguredColumns();
     }
