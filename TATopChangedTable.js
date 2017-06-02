@@ -60,7 +60,7 @@ class TATopChangedTable{
      * @function _render
      */
     private function _render(){
-        var qType = "categorysentiment";
+        var qType = "categories";
         var mask = _taMasks.GetCategoriesMask(_level);
         var rowexpr = _taTableUtils.GetTAQuestionExpression(qType, mask);
         _taTableUtils.CreateTableFromExpression(rowexpr);
