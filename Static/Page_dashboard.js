@@ -372,8 +372,8 @@ class Page_dashboard{
      * @returns {Boolean}
      */
     static function txtThemeDistribution_Hide(context){
-    return false;
-}
+        return true;
+    }
 
     /**
      * @memberof Page_dashboard
@@ -412,7 +412,7 @@ class Page_dashboard{
      * @returns {Boolean}
      */
     static function txtPositive_Hide(context){
-    return false;
+    return true;
 }
 
     /**
@@ -432,7 +432,7 @@ class Page_dashboard{
      * @returns {Boolean}
      */
     static function txtNeutral_Hide(context){
-    return false;
+    return true;
 }
 
     /**
@@ -452,7 +452,7 @@ class Page_dashboard{
      * @returns {Boolean}
      */
     static function txtNegative_Hide(context){
-    return false;
+    return true;
 }
 
     /**
