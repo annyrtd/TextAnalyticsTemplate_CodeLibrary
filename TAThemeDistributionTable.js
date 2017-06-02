@@ -53,12 +53,12 @@ class TAThemeDistributionTable{
      * @function _render
      */
     private function _render(){
-        var qType = "categorysentiment";
+        var qType = "categories";
         var rowexpr = _taTableUtils.GetTAQuestionExpression(qType);
 
         _taTableUtils.CreateTableFromExpression(rowexpr);
         _addTimeSeriesColumn();
-        _setupConditionalFormatting();
+        //_setupConditionalFormatting();
     }
 
     /**

@@ -261,7 +261,7 @@ class Page_dashboard{
      * @param {Object} context - {component: text, pageContext: this.pageContext, report: report, user: user, state: state, confirmit: confirmit, log: log}
      */
     static function txtMostPositive_Render(context){
-    var label = _curDictionary['Top 5 most positive themes'];
+    var label = _curDictionary['Top 5 most discussed themes'];
     context.component.Output.Append(label);
 }
 
