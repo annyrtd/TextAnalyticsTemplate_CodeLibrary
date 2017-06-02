@@ -134,11 +134,11 @@ class Page_comments{
         var selectedCategory = _selectedCategory;
         context.log.LogDebug("selected category: "+selectedCategory);
         if( selectedCategory && selectedCategory != "emptyv" ){
-            htlComments.AddTAColumn("categorysentiment", false, selectedCategory);
+            //htlComments.AddTAColumn("categorysentiment", false, selectedCategory);
         }
         htlComments.AddTAColumn("verbatim");
         htlComments.AddColumn(_folder.GetTimeVariableId(), true);
-        htlComments.AddTAColumn("overallsentiment");
+        //htlComments.AddTAColumn("overallsentiment");
         htlComments.AddTAColumn("categories");
         htlComments.AddConfiguredColumns();
     }
