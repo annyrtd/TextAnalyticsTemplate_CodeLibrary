@@ -218,12 +218,12 @@ class Page_dashboard{
         var table = context.component;
         var sentiment = context.state.Parameters.IsNull("TA_VIEW_SENTIMENT") ? "emptyv" : context.state.Parameters.GetString("TA_VIEW_SENTIMENT");
 
-    var themeDistributionTable = new TAThemeDistributionTable(globals, _folder, table, sentiment,Config);
-    themeDistributionTable.GetTATableUtils().AddClasses(["reportal-table","reportal-categories", "striped-columns", "reportal-hierarchy-table"]);
-    themeDistributionTable.GetTATableUtils().SetupDrilldown("TA_ALL_CATEGORIES", "detailed_analysis, comments");
-    themeDistributionTable.GetTATableUtils().ClearTableDistributions();
-    themeDistributionTable.GetTATableUtils().SetupDataSupressing(1);
-}
+        var themeDistributionTable = new TAThemeDistributionTable(globals, _folder, table, sentiment,Config);
+        themeDistributionTable.GetTATableUtils().AddClasses(["reportal-table","reportal-categories", "striped-columns", "reportal-hierarchy-table"]);
+        themeDistributionTable.GetTATableUtils().SetupDrilldown("TA_ALL_CATEGORIES", "detailed_analysis, comments");
+        themeDistributionTable.GetTATableUtils().ClearTableDistributions();
+        themeDistributionTable.GetTATableUtils().SetupDataSupressing(1);
+    }
 
     /**
      * @memberof Page_dashboard

@@ -69,12 +69,12 @@ class TAThemeDistributionTable{
      */
     private function _addTimeSeriesColumn(){
         var headerTimeSeries = _taTableUtils.GetTimePeriodHeader(_period.Unit, _period.From, _period.To);
-        var columnsCollection: HeaderCollection = new HeaderCollection();
+        //var columnsCollection: HeaderCollection = new HeaderCollection();
 
-        columnsCollection.AddRange(_getCountsColumn());
-        columnsCollection.Add(_getHeaderStatistics());
+        //columnsCollection.AddRange(_getCountsColumn());
+        //columnsCollection.Add(_getHeaderStatistics());
 
-        headerTimeSeries.SubHeaders.AddRange(columnsCollection);
+        //headerTimeSeries.SubHeaders.AddRange(columnsCollection);
         _table.ColumnHeaders.Add(headerTimeSeries);
     }
 
