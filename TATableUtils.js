@@ -279,12 +279,10 @@ class TATableUtils{
      * @param {Boolean} hideHeader
      */
     function GetBaseExpression( hideHeader ){
-        var expression = "";
-        expression = '[BASE]{';
+        var expression = '[BASE]';
         if ( hideHeader ) {
-            expression += ';hideheader:true';
+            expression += '{hideheader:true}';
         }
-        expression += '}';
         return expression;
     }
 
