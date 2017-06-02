@@ -182,6 +182,10 @@ class TADetailedAnalysisTable{
             chartType,
             [
                 {
+                    Formula: "cellv(col-1,row)",
+                    Color: (Config.Colors.NegNeuPosPalette.Positive)
+                }
+                /*{
                     Formula: "cellv(col-25,row)",
                     Color: (Config.Colors.NegNeuPosPalette.Positive)
                 },
@@ -192,7 +196,7 @@ class TADetailedAnalysisTable{
                 {
                     Formula: "cellv(col-1,row)",
                     Color: (Config.Colors.NegNeuPosPalette.Negative)
-                }
+                }*/
             ],
             " ");
         _table.ColumnHeaders.Add(chartHeader);
