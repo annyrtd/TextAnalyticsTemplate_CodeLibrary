@@ -174,13 +174,13 @@ class Page_comments{
 
         var selectedCategory = _selectedCategory;
 
-        hitlistHeaders["sentiment"] = []
+        /*hitlistHeaders["sentiment"] = []
 
         if( selectedCategory && selectedCategory != "emptyv"){
             hitlistHeaders["sentiment"].push( {
                     name: _folder.GetQuestionId("categorysentiment")+"_"+selectedCategory
             } );
-        }
+        }*/
 
         hitlistHeaders["verbatim"] = [{
             name: _folder.GetQuestionId(),
@@ -199,10 +199,10 @@ class Page_comments{
             }];
 
 
-        hitlistHeaders["sentiment"].push( {
+        /*hitlistHeaders["sentiment"].push( {
             name: _folder.GetQuestionId("overallSentiment"),
             title: _curDictionary["Overall Sentiment"]
-        });
+        });*/
 
         hitlistHeaders["other"] = [];
 
