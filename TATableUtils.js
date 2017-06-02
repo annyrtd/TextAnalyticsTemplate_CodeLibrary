@@ -280,12 +280,11 @@ class TATableUtils{
      */
     function GetBaseExpression( hideHeader ){
         var expression = "";
-        expression = '[BASE]{totals:true';
-        expression += ';mask:emptyv';
+        expression = '[BASE]{';
         if ( hideHeader ) {
             expression += ';hideheader:true';
-            expression += '}';
         }
+        expression += '}';
         return expression;
     }
 
