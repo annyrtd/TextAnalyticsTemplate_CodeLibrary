@@ -18,6 +18,7 @@ class TAFolder{
 
     //additional fields
     private var _timeVariableId: String;
+    private var _dateTimeFormat: String;
     private var _datasourceId: String;
     private var _variablesToViewBy;
     private var _hitlistColumns;
@@ -35,6 +36,7 @@ class TAFolder{
         _qName = config.TAQuestions[questionIndex].TAQuestionName;
         _modelNo = config.TAQuestions[questionIndex].TAModelNo;
         _timeVariableId = config.TAQuestions[questionIndex].TimeVariableId;
+        _dateTimeFormat = config.TAQuestions[questionIndex].DateTimeFormat;
 
         _datasourceId = config.TAQuestions[questionIndex].DatasourceId;
 
@@ -142,6 +144,17 @@ class TAFolder{
      */
     function GetTimeVariableId(){
         return _timeVariableId;
+    }
+
+    /**
+     * @memberof TAFolder
+     * @instance
+     * @function GetDateTimeFormat
+     * @description function to Get the date/time format for the time variable
+     * @returns {String}
+     */
+    function GetDateTimeFormat(){
+        return _dateTimeFormat;
     }
 
     /**
