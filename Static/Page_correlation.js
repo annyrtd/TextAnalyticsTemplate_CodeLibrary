@@ -104,6 +104,8 @@ class Page_correlation{
         var textSeparator = folder.GetHierarchy().GetTextSeparator();
         var dateTimeFormat = folder.GetDateTimeFormat();
 
+    context.log.LogDebug('dateTimeFormat : ' + dateTimeFormat);
+
         var hitlistInit = "<script>"+
             "Y.Global.on('hitlistloaded', function (e) {  "+
             "var upgradedHitlist = new Reportal.Hitlist({"+
