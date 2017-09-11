@@ -102,12 +102,14 @@ class Page_correlation{
         var selectedFolder = TALibrary.GetTAFoldersParameterValue(context);
         var folder = Config.GetTALibrary().GetFolderById(selectedFolder);
         var textSeparator = folder.GetHierarchy().GetTextSeparator();
+        var dateTimeFormat = folder.GetDateTimeFormat();
 
         var hitlistInit = "<script>"+
             "Y.Global.on('hitlistloaded', function (e) {  "+
             "var upgradedHitlist = new Reportal.Hitlist({"+
             "hitlist: document.querySelector('.reportal-hitlist-container'),"+
             "separator: '" + (textSeparator ? textSeparator : "") + "',"+
+            "dateTimeFormat: '" + (dateTimeFormat ? dateTimeFormat : "") + "',"+
             "headers: hitlistHeaders,"+
             "sentimentConfig: sentimentConfig,"+
             "currentCategory: currentCategory"+
